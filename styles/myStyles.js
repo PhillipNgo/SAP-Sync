@@ -3,15 +3,18 @@ import background1 from './../imgs/background1.jpg';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'blue',
-    fontSize:40
+    backgroundColor: 'rgba(159, 159, 159, 0.22)',
+    width:100,
+    borderRadius:20,
+    marginTop:5
   },
   'centerBlock': {
     marginLeft: 'auto',
     marginRight: 'auto'
   },
   'headingOne': {
-    fontSize: 40
+    fontSize: 40,
+    fontWeight:'600'
   },
   'statusBar': {
     backgroundColor: '#2379BF',
@@ -36,12 +39,17 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   backdrop: {
-    paddingTop: 10,
-    height: 266,
-    width: 400
+    marginTop: .1,
   },
   backdropView: {
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: 'rgba(0, 0, 0, 0.15)',
+    height:266,
+    width:400
+  },
+  backdropHome: {
+    backgroundColor: 'rgba(235, 235, 235, 0.53)',
+    height:'100%',
+    width:400
   },
   headline: {
     fontSize: 50,
@@ -49,7 +57,24 @@ const styles = StyleSheet.create({
     color: 'white',
     textShadowColor: 'black',
     textShadowOffset: {width:1, height:1},
-    textShadowRadius: 3
+    textShadowRadius: 3,
+    backgroundColor: 'rgba(0, 0, 0, 0.15)'
+  },
+  container: {
+    paddingTop:18
+  },
+  profileBox: {
+    flex:1 ,
+    flexDirection: 'row',
+    alignItems:'baseline',
+    justifyContent: 'flex-start'
+  },
+  profileHeading: {
+    fontSize: 28,
+    fontWeight:'400'
+  },
+  profileInfo: {
+    fontSize: 20
   }
 });
 

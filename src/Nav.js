@@ -1,43 +1,28 @@
 import React from 'react';
 import { Text, Button, Platform, ScrollView, StyleSheet, Image } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
-
-const url = 'https://scontent.xx.fbcdn.net/v/t1.0-1/p320x320/11037222_10205920297827781_3146923335721648288_n.jpg?oh=bc6fa550affbafb0b565aa523b8f6ec9&oe=5A00A82B';
-
-const ProfileScreen = ({ navigation }) => (
-  <ScrollView style={styles.container}>
-    <Text>THIS IS Profile PAGE! </Text>
-  </ScrollView>
-);
-ProfileScreen.navigationOptions = {
-  drawerLabel: 'Ronald Cheng',
-  drawerIcon: (()=> (
-     <Image
-       source={{ url}}
-       style={{ width: 32, height: 32 }}
-     />
-   ))
-};
-
-const PlacesScreen = ({ navigation }) => (
-  <ScrollView style={styles.container}>
-    <Text> THIS IS Places PAGE! </Text>
-  </ScrollView>
-);
-PlacesScreen.navigationOptions = {
-  drawerLabel: 'Places',
-};
+import EventsPage from './EventsPage';
+import ProfilePage from './ProfilePage';
+import HomePage from './HomePage';
 
 const Nav = DrawerNavigator(
   {
     Profile: {
       path: '/',
-      screen: ProfileScreen,
+      screen: ProfilePage,
     },
-    Places: {
-      path: '/places',
-      screen: PlacesScreen,
+    Local: {
+      path: '/events1',
+      screen: EventsPage,
     },
+    InHouse: {
+      path: '/events2',
+      screen: EventsPage,
+    },
+    Home: {
+      path: '/Home',
+      screen: HomePage,
+    }
     // Friends: {
     //   path: '/friends',
     //   screen: FriendsScreen,
@@ -56,7 +41,7 @@ const Nav = DrawerNavigator(
     // },
   },
   {
-    initialRouteName: 'Profile',
+    initialRouteName: 'Home',
     contentOptions: {
       activeTintColor: '#e91e63',
     },

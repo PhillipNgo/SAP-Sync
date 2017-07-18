@@ -3,26 +3,7 @@ import { ScrollView, TouchableOpacity, Image, AppRegistry, Alert, Text, View, Bu
 import { StackNavigator } from 'react-navigation';
 import { findEvents } from './utils/TicketMasterService';
 import styles from '../styles/myStyles';
-
-class EventBlock extends React.Component {
-
-  render() {
-    const { img_url, title } = this.props;
-    return (
-      <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
-        <Image
-          style={[styles.centerBlock, styles.backdrop]}
-          source={{uri: img_url}}
-        >
-          <View style={styles.backdropView}>
-            <Text style={[styles.headline]}>{title}</Text>
-          </View>
-        </Image>
-      </TouchableOpacity>
-    )
-  }
-}
-
+import EventBlock from './EventBlock';
 
 class LocalEventsPage extends React.Component {
   constructor(props) {
@@ -31,7 +12,6 @@ class LocalEventsPage extends React.Component {
       text: 'Useless Placeholder',
       hasFetched: false
     };
-    this._onPressButton = this._onPressButton.bind(this);
   }
 
   componentDidMount() {
@@ -41,10 +21,6 @@ class LocalEventsPage extends React.Component {
         hasFetched: true
       })
     });
-  }
-
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
   }
 
   static navigationOptions = {
@@ -58,7 +34,7 @@ class LocalEventsPage extends React.Component {
         <ScrollView>
         { hasFetched &&
           data.map((event, index) => {
-            return <EventBlock key={index} title={event.name} img_url={event.images[0].url} />
+            return <EventBlock key={index} event={event} />
           })
         }
         </ScrollView>
