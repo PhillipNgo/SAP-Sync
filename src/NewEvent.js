@@ -32,14 +32,11 @@ class NewEvent extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <ScrollView>
+      <ScrollView style={styles.container}>
           <View style={{
                padding : '10%',
-               borderBottomColor: '#000000',
-               borderBottomWidth: 1,
-               backgroundColor: 'lightblue'
              }}>
-             <Text> Create a New Event </Text>
+             <Text style={[styles.headingOne, {textAlign:'center'}]}> Create a New Event </Text>
             <FormLabel>Title</FormLabel>
             <FormInput />
             <FormLabel>Date</FormLabel>
@@ -55,10 +52,12 @@ class NewEvent extends React.Component {
             <FormInput />
             <FormLabel>Groups</FormLabel>
             <FormInput />
-            <Button
-              onPress={() => navigate('Local')}
-              title="Create"
-            />
+            <View style={[styles.centerBlock, styles.button]}>
+              <Button
+                onPress={() => navigate('Local')}
+                title="Create"
+              />
+            </View>
           </View>
     </ScrollView>
     );
