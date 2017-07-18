@@ -25,7 +25,7 @@ class EventBlock extends React.Component {
            <View style={{marginTop: 22}}>
             <View>
               <Image
-                style={[styles.centerBlock, styles.backdrop]}
+                style={[styles.centerBlock, styles.backdrop, {height: 266, width: 400}]}
                 source={{uri: event.images[0].url}}
               />
               <Text style={[styles.headline]}>{event.name}</Text>
@@ -52,7 +52,7 @@ class EventBlock extends React.Component {
         </Modal>
         <TouchableOpacity onPress={() => this.setModalVisible(true)} underlayColor='white' >
           <Image
-            style={[styles.centerBlock, styles.backdrop]}
+            style={[styles.centerBlock, styles.backdrop, {height: 266, width: 400}]}
             source={{uri: event.images[0].url}}
           >
             <View style={styles.backdropView}>

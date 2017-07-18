@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Button, Platform, ScrollView, StyleSheet, Image } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import EventsPage from './EventsPage';
+import LocalEventsPage from './LocalEventsPage';
 import ProfilePage from './ProfilePage';
 import HomePage from './HomePage';
 
@@ -17,7 +18,7 @@ const Nav = DrawerNavigator(
     },
     InHouse: {
       path: '/events2',
-      screen: EventsPage,
+      screen: LocalEventsPage,
     },
     Home: {
       path: '/Home',
