@@ -4,11 +4,12 @@ import { DrawerNavigator } from 'react-navigation';
 
 const ProfileScreen = ({ navigation }) => (
   <ScrollView style={styles.container}>
-    <Text style ={{height: '100%'}}>THIS IS Profile PAGE! </Text>
+    <Text>THIS IS Profile PAGE! </Text>
   </ScrollView>
 );
 ProfileScreen.navigationOptions = {
   drawerLabel: 'View My Profile',
+   drawerIcon:
 };
 
 const PlacesScreen = ({ navigation }) => (
@@ -57,7 +58,8 @@ const Nav = DrawerNavigator(
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS === 'ios' ? 20 : 0,
+    //marginTop: Platform.OS === 'ios' ? 20 : 0,
+    height: '100%'
   },
 });
 
