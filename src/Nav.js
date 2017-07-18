@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, Button, Platform, ScrollView, StyleSheet, Image } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
+import EventsPage from './EventsPage';
 
 const url = 'https://scontent.xx.fbcdn.net/v/t1.0-1/p320x320/11037222_10205920297827781_3146923335721648288_n.jpg?oh=bc6fa550affbafb0b565aa523b8f6ec9&oe=5A00A82B';
 
@@ -34,9 +35,9 @@ const Nav = DrawerNavigator(
       path: '/',
       screen: ProfileScreen,
     },
-    Places: {
-      path: '/places',
-      screen: PlacesScreen,
+    Events: {
+      path: '/events',
+      screen: EventsPage,
     },
     // Friends: {
     //   path: '/friends',
@@ -56,7 +57,7 @@ const Nav = DrawerNavigator(
     // },
   },
   {
-    initialRouteName: 'Profile',
+    initialRouteName: 'Events',
     contentOptions: {
       activeTintColor: '#e91e63',
     },

@@ -5,95 +5,6 @@ import styles from '../styles/myStyles';
 import  Nav  from './Nav';
 import { findEvents } from './utils/TicketMasterService';
 
-class EventsPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: 'Useless Placeholder',
-      data: {}
-    };
-    this._onPressButton = this._onPressButton.bind(this);
-  }
-
-  componentDidMount() {
-    findEvents('22180').then(data => {
-      this.setState({
-        data: data
-      })
-    });
-
-  }
-
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
-
-  static navigationOptions = {
-    title: 'Events',
-  };
-  render() {
-    return (
-      <View>
-        <ScrollView>
-          <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
-            <Image
-              source={require('./../imgs/coffee.jpg')}
-              style={[styles.centerBlock, styles.backdrop]}
-            >
-              <View style={styles.backdropView}>
-                <Text style={[styles.headline]}>Morning Coffee</Text>
-              </View>
-            </Image>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
-            <Image
-              source={require('./../imgs/beer.jpg')}
-              style={styles.centerBlock}
-            >
-              <View style={styles.backdropView}>
-                <Text style={[styles.headline]}>Happy Hour</Text>
-              </View>
-            </Image>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
-            <Image
-              source={require('./../imgs/burger.jpg')}
-              style={styles.centerBlock}
-            >
-              <View style={styles.backdropView}>
-                <Text style={[styles.headline]}>Burgers</Text>
-              </View>
-            </Image>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
-            <Image
-              source={require('./../imgs/pong.jpg')}
-              style={styles.centerBlock}
-            >
-              <View style={styles.backdropView}>
-                <Text style={[styles.headline]}>Pong</Text>
-              </View>
-            </Image>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
-            <Image
-              source={require('./../imgs/billiards.jpg')}
-              style={styles.centerBlock}
-            >
-              <View style={styles.backdropView}>
-                <Text style={[styles.headline]}>Billiards</Text>
-              </View>
-            </Image>
-          </TouchableOpacity>
-        </ScrollView>
-      </View>
-    );
-  }
-}
-
-
 class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Home',
@@ -109,7 +20,7 @@ class HomeScreen extends React.Component {
           style={[styles.centerBlock, {borderRadius: 20}]}
         />
         <Button
-          onPress={() => navigate('Event')}
+          onPress={() => navigate('Nav')}
           title="Go"
         />
       </View>
@@ -119,7 +30,7 @@ class HomeScreen extends React.Component {
 
 const App = StackNavigator({
   Home: { screen: HomeScreen },
-  Event: { screen: EventsPage },
+  Nav: { screen: Nav },
 });
 
 AppRegistry.registerComponent('App', () => App);
