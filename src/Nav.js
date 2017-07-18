@@ -59,7 +59,7 @@ const Nav = DrawerNavigator(
   {
     initialRouteName: 'Events',
     contentOptions: {
-      activeTintColor: '#e91e63',
+      activeTintColor: '#2379BF',
     },
     drawerPosition: 'right'
   },
@@ -67,7 +67,6 @@ const Nav = DrawerNavigator(
 
 const styles = StyleSheet.create({
   container: {
-    //marginTop: Platform.OS === 'ios' ? 20 : 0,
     height: '100%'
   },
 });
