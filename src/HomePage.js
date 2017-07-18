@@ -25,14 +25,18 @@ class HomePage extends React.Component {
               source={require('./../imgs/ronald.jpg')}
               style={[styles.centerBlock, {borderRadius: 20}]}
             />
-            <Button
-              onPress={() => navigate('Local')}
-              title="Local"
-            />
-            <Button
-              onPress={() => navigate('InHouse')}
-              title="In-House"
-            />
+            <View style={[styles.button,styles.centerBlock]}>
+              <Button
+                onPress={() => navigate('Local')}
+                title="Local"
+              />
+            </View>
+            <View style={[styles.button,styles.centerBlock]}>
+              <Button
+                onPress={() => navigate('InHouse')}
+                title="In-House"
+              />
+            </View>
           </View>
         </Image>
     </View>
