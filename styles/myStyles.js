@@ -39,8 +39,13 @@ const styles = StyleSheet.create({
     marginTop: .1,
   },
   backdropView: {
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundColor: 'rgba(0, 0, 0, 0.15)',
     height:266,
+    width:400
+  },
+  backdropHome: {
+    backgroundColor: 'rgba(235, 235, 235, 0.53)',
+    height:'100%',
     width:400
   },
   headline: {
@@ -50,6 +55,10 @@ const styles = StyleSheet.create({
     textShadowColor: 'black',
     textShadowOffset: {width:1, height:1},
     textShadowRadius: 3,
+    backgroundColor: 'rgba(0, 0, 0, 0.15)',
+  },
+  container: {
+    paddingTop:18
   }
 });
 

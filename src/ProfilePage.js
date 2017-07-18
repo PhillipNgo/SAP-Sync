@@ -20,7 +20,7 @@ export default class ProfilePage extends React.Component {
 
   render(){
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={[{textAlign: 'left', paddingTop: '2%'}]}>Ronald Cheng</Text>
         <Image
           source={require('./../imgs/ronald.jpg')}

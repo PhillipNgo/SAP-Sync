@@ -13,21 +13,28 @@ class HomePage extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View>
-        <Text style={[styles.headingOne, {textAlign: 'center', paddingTop: '13%'}]}>Hello, Ronald!</Text>
+      <View style={styles.container}>
         <Image
-          source={require('./../imgs/ronald.jpg')}
+          source={require('./../imgs/background2.jpg')}
           resizeMode='cover'
-          style={[styles.centerBlock, {borderRadius: 20}]}
-        />
-        <Button
-          onPress={() => navigate('Local')}
-          title="Local"
-        />
-        <Button
-          onPress={() => navigate('InHouse')}
-          title="In-House"
-        />
+          style={[styles.centerBlock, styles.backdrop]}
+        >
+          <View style={styles.backdropHome}>
+            <Text style={[styles.headingOne, {textAlign: 'center', paddingTop: '13%'}]}>Hello, Ronald!</Text>
+            <Image
+              source={require('./../imgs/ronald.jpg')}
+              style={[styles.centerBlock, {borderRadius: 20}]}
+            />
+            <Button
+              onPress={() => navigate('Local')}
+              title="Local"
+            />
+            <Button
+              onPress={() => navigate('InHouse')}
+              title="In-House"
+            />
+          </View>
+        </Image>
     </View>
     );
   }
