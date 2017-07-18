@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, AppRegistry, TextInput  } from 'react-native';
 import styles from '../styles/myStyles';
+import  Nav  from './Nav';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class App extends React.Component {
       <View>
         <View style={styles.statusBar} />
         <View style={styles.tabBar}>
-          <Text style={[styles.headingOne, {textAlign: 'center'}]}>
+          {/* <Text style={[styles.headingOne, {textAlign: 'center'}]}>
             Hello
           </Text>
         </View>
@@ -28,7 +29,8 @@ export default class App extends React.Component {
             style={[styles.loginInput, styles.centerBlock]}
             onChangeText={(text) => this.setState({text})}
             placeholder='Password'
-          />
+          /> */}
+          <Nav />
         </View>
       </View>
     );
