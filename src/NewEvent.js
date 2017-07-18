@@ -7,14 +7,31 @@ import styles from '../styles/myStyles';
 import  Nav  from './Nav';
 import { findEvents } from './utils/TicketMasterService';
 import { FormLabel, FormInput } from 'react-native-elements';
-import DatePicker from 'react-native-datepicker'
+import DatePicker from 'react-native-datepicker';
+
+const getLocation = () => {
+  const geolocation = navigator.geolocation;
+
+  const location = new Promise((resolve, reject) => {
+    if (!geolocation) {
+      reject(new Error('Not Supported'));
+    }
+
+    geolocation.getCurrentPosition((position) => {
+      resolve(position);
+      window.alert(position);
+    }, () => {
+      reject (new Error('Permission denied'));
+    });
+  });
+}
 
 class NewEvent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       text: 'Type Here',
-      date: new Date()
+      date: "07-18-2017"
     };
   }
   //
@@ -41,15 +58,21 @@ class NewEvent extends React.Component {
             <FormInput />
             <FormLabel>Date</FormLabel>
             <DatePicker
-              date = "2017-07-18"
-              confirmBtnText="Confirm"
-              cancelBtnText="Cancel"
-             style={{width: 300}}
+              date = {this.state.date}
+              format="MM-DD-YYYY"
+              confirmBtnText= "Confirm"
+              cancelBtnText= "Cancel"
+              style={{width: 300}}
+              onDateChange={(date) => {this.setState({date: date})}}
              />
             <FormLabel>Description</FormLabel>
             <FormInput />
             <FormLabel>Location</FormLabel>
             <FormInput />
+            <Button
+              onPress={getLocation}
+              title="Current Location"
+            />
             <FormLabel>Groups</FormLabel>
             <FormInput />
             <View style={[styles.centerBlock, styles.button]}>
