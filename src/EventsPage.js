@@ -34,7 +34,7 @@ export default class EventsPage extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <ScrollView>
           <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
             <Image
