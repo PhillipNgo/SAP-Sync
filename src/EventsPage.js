@@ -50,7 +50,7 @@ export default class EventsPage extends React.Component {
           <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
             <Image
               source={require('./../imgs/beer.jpg')}
-              style={styles.centerBlock}
+              style={[styles.centerBlock, styles.backdrop]}
             >
               <View style={styles.backdropView}>
                 <Text style={[styles.headline]}>Happy Hour</Text>
@@ -61,7 +61,7 @@ export default class EventsPage extends React.Component {
           <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
             <Image
               source={require('./../imgs/burger.jpg')}
-              style={styles.centerBlock}
+              style={[styles.centerBlock, styles.backdrop]}
             >
               <View style={styles.backdropView}>
                 <Text style={[styles.headline]}>Burgers</Text>
@@ -71,7 +71,7 @@ export default class EventsPage extends React.Component {
           <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
             <Image
               source={require('./../imgs/pong.jpg')}
-              style={styles.centerBlock}
+              style={[styles.centerBlock, styles.backdrop]}
             >
               <View style={styles.backdropView}>
                 <Text style={[styles.headline]}>Pong</Text>
@@ -81,7 +81,7 @@ export default class EventsPage extends React.Component {
           <TouchableOpacity onPress={this._onPressButton} underlayColor='white' >
             <Image
               source={require('./../imgs/billiards.jpg')}
-              style={styles.centerBlock}
+              style={[styles.centerBlock, styles.backdrop]}
             >
               <View style={styles.backdropView}>
                 <Text style={[styles.headline]}>Billiards</Text>
