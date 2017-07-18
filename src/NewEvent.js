@@ -34,13 +34,6 @@ class NewEvent extends React.Component {
       date: "07-18-2017"
     };
   }
-  //
-  // static propTypes = {
-  //       date: React.PropTypes.instanceOf(Date)
-  //   }
-  // static defaultProps = {
-  //     date: new Date()
-  // }
 
   static navigationOptions = {
     title: 'Create A New Event',
@@ -62,7 +55,7 @@ class NewEvent extends React.Component {
               format="MM-DD-YYYY"
               confirmBtnText= "Confirm"
               cancelBtnText= "Cancel"
-              style={{width: 300}}
+              style={[styles.centerBlock,{width: 260}]}
               onDateChange={(date) => {this.setState({date: date})}}
              />
             <FormLabel>Description</FormLabel>

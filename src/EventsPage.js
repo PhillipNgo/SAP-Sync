@@ -125,7 +125,7 @@ export default class EventsPage extends React.Component {
   }
 
   static navigationOptions = {
-    title: 'Events'
+    title: 'Company Events'
   };
 
   render() {
