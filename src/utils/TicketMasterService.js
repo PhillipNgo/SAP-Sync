@@ -1,5 +1,5 @@
 const EVENTS_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
-const API_KEY = 'bGcQOY6fVkhTWFOtEbAHcqmlVhNKWqqG';
+import API_KEY from './key';
 const COUNTRY_CODE = 'US';
 
 export const findEvents = (postalCode) => {
