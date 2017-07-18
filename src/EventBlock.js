@@ -20,7 +20,6 @@ class EventBlock extends React.Component {
             animationType={"slide"}
             transparent={false}
             visible={this.state.modalVisible}
-            onRequestClose={() => {alert("Modal has been closed.")}}
             >
            <View style={{marginTop: 22}}>
             <View>

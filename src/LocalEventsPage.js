@@ -9,7 +9,6 @@ class LocalEventsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Useless Placeholder',
       hasFetched: false
     };
   }
