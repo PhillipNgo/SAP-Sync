@@ -1,0 +1,15 @@
+
+'use strict';
+
+var ReactNative = require('ReactNative');
+var UIManager = require('UIManager');
+
+function takeSnapshot(view, options) {
+  if (typeof view !== 'number' && view !== 'window') {
+    view = ReactNative.findNodeHandle(view) || 'window';
+  }
+
+  return UIManager.__takeSnapshot(view, options);
+}
+
+module.exports = takeSnapshot;

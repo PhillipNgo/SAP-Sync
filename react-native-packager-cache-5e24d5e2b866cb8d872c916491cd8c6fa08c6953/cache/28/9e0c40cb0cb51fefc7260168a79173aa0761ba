@@ -1,0 +1,89 @@
+
+
+'use strict';
+
+var _require = require('ReactFiberStack'),
+    createCursor = _require.createCursor,
+    pop = _require.pop,
+    push = _require.push;
+
+var invariant = require('fbjs/lib/invariant');
+
+var NO_CONTEXT = {};
+
+module.exports = function (config) {
+  var getChildHostContext = config.getChildHostContext,
+      getRootHostContext = config.getRootHostContext;
+
+
+  var contextStackCursor = createCursor(NO_CONTEXT);
+  var contextFiberStackCursor = createCursor(NO_CONTEXT);
+  var rootInstanceStackCursor = createCursor(NO_CONTEXT);
+
+  function requiredContext(c) {
+    invariant(c !== NO_CONTEXT, 'Expected host context to exist. This error is likely caused by a bug ' + 'in React. Please file an issue.');
+    return c;
+  }
+
+  function getRootHostContainer() {
+    var rootInstance = requiredContext(rootInstanceStackCursor.current);
+    return rootInstance;
+  }
+
+  function pushHostContainer(fiber, nextRootInstance) {
+    push(rootInstanceStackCursor, nextRootInstance, fiber);
+
+    var nextRootContext = getRootHostContext(nextRootInstance);
+
+    push(contextFiberStackCursor, fiber, fiber);
+    push(contextStackCursor, nextRootContext, fiber);
+  }
+
+  function popHostContainer(fiber) {
+    pop(contextStackCursor, fiber);
+    pop(contextFiberStackCursor, fiber);
+    pop(rootInstanceStackCursor, fiber);
+  }
+
+  function getHostContext() {
+    var context = requiredContext(contextStackCursor.current);
+    return context;
+  }
+
+  function pushHostContext(fiber) {
+    var rootInstance = requiredContext(rootInstanceStackCursor.current);
+    var context = requiredContext(contextStackCursor.current);
+    var nextContext = getChildHostContext(context, fiber.type, rootInstance);
+
+    if (context === nextContext) {
+      return;
+    }
+
+    push(contextFiberStackCursor, fiber, fiber);
+    push(contextStackCursor, nextContext, fiber);
+  }
+
+  function popHostContext(fiber) {
+    if (contextFiberStackCursor.current !== fiber) {
+      return;
+    }
+
+    pop(contextStackCursor, fiber);
+    pop(contextFiberStackCursor, fiber);
+  }
+
+  function resetHostContainer() {
+    contextStackCursor.current = NO_CONTEXT;
+    rootInstanceStackCursor.current = NO_CONTEXT;
+  }
+
+  return {
+    getHostContext: getHostContext,
+    getRootHostContainer: getRootHostContainer,
+    popHostContainer: popHostContainer,
+    popHostContext: popHostContext,
+    pushHostContainer: pushHostContainer,
+    pushHostContext: pushHostContext,
+    resetHostContainer: resetHostContainer
+  };
+};
