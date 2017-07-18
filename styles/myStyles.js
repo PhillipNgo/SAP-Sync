@@ -1,13 +1,10 @@
 import { StyleSheet } from 'react-native';
+import background1 from './../imgs/background1.jpg';
 
 const styles = StyleSheet.create({
-  bigBlue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
+  button: {
+    backgroundColor: 'blue',
+    fontSize:40
   },
   'centerBlock': {
     marginLeft: 'auto',
@@ -37,6 +34,20 @@ const styles = StyleSheet.create({
     width: '50%',
     borderRadius: 8,
     marginBottom: 10
+  },
+  backdrop: {
+    paddingTop: 10,
+  },
+  backdropView: {
+    backgroundColor: 'rgba(0,0,0,0)',
+  },
+  headline: {
+    fontSize: 50,
+    textAlign: 'center',
+    color: 'white',
+    textShadowColor: 'black',
+    textShadowOffset: {width:1, height:1},
+    textShadowRadius: 3
   }
 });
 
