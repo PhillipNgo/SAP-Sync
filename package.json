@@ -24,6 +24,7 @@
     "react-native": "^0.45.1",
     "react-native-elements": "^0.15.0",
     "react-native-material-kit": "^0.4.1",
+    "react-native-vector-icons": "^4.2.0",
     "react-navigation": "^1.0.0-beta.11"
   }
 }

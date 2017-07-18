@@ -3,7 +3,8 @@ import { Text, Button, Platform, ScrollView, StyleSheet, Image, View } from 'rea
 import { DrawerNavigator } from 'react-navigation';
 import EventsPage from './EventsPage';
 import styles from '../styles/myStyles';
-import { SocialIcon } from 'react-native-elements'
+import { SocialIcon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default class ProfilePage extends React.Component {
@@ -20,16 +21,16 @@ export default class ProfilePage extends React.Component {
 
   render(){
     return (
-      <View>
-        <Text style={[{textAlign: 'left', paddingTop: '2%'}]}>Ronald Cheng</Text>
+      <ScrollView style = {{backgroundColor: 'powderblue'}}>
+        <Text style={[{textAlign: 'center', paddingTop: '10%'}]}>Ronald Cheng</Text>
         <Image
           source={require('./../imgs/ronald.jpg')}
           resizeMode='cover'
           style={[styles.centerBlock, {borderRadius: 20}]}
         />
-        <View style={{flex: 1, flexDirection: 'column'}}>
+        <View style={{flex: 1, flexDirection: 'column', paddingTop: '5%'}}>
          <View style={{ height: 50, width : 500, backgroundColor: 'powderblue'}} >
-           <Text> Intern </Text>
+           <Text> Title: Intern </Text>
          </View>
          <View style={{ height: 50, width : 500, backgroundColor: 'powderblue'}} >
            <Text> Interest: Basketball </Text>
@@ -40,13 +41,21 @@ export default class ProfilePage extends React.Component {
          <View style={{ height: 50, width : 500, backgroundColor: 'powderblue'}} >
            <Text> Team: R&D </Text>
          </View>
+         <View style={{ height: 50, width : 500, backgroundColor: 'powderblue'}} >
+           <Text> Groups: </Text>
+         </View>
+         <View style={{ height: 50, width : 500, backgroundColor: 'powderblue'}} >
+           <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.loginWithFacebook}>
+              Login with Facebook
+            </Icon.Button>
+         </View>
          {/* <View>
            <SocialIcon
             type='twitter'
             />
          </View> */}
        </View>
-      </View>
+     </ScrollView>
     );
   }
 };

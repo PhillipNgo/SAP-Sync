@@ -5,7 +5,9 @@ import styles from '../styles/myStyles';
 import  Nav  from './Nav';
 import { findEvents } from './utils/TicketMasterService';
 
-const App = ()=> {return <Nav/>} 
+const App = ()=> {
+  return <Nav/>
+} 
 
 AppRegistry.registerComponent('App', () => App);
 
