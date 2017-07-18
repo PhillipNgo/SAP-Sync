@@ -3,11 +3,11 @@ import { ScrollView, TouchableOpacity, Image, AppRegistry, Alert, Text, View, Bu
 import { StackNavigator } from 'react-navigation';
 import styles from '../styles/myStyles';
 import  Nav  from './Nav';
-import { findEvents } from './utils/TicketMasterService';
+import LocalEventsPage from './LocalEventsPage';
 
 const App = ()=> {
   return <Nav/>
-} 
+}
 
 AppRegistry.registerComponent('App', () => App);
 
