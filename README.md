@@ -4,6 +4,7 @@ Below you'll find information about performing common tasks. The most recent ver
 
 ## Table of Contents
 
+* [Setup](#setup)
 * [Updating to New Releases](#updating-to-new-releases)
 * [Available Scripts](#available-scripts)
   * [npm start](#npm-start)
@@ -26,6 +27,13 @@ Below you'll find information about performing common tasks. The most recent ver
   * [Networking](#networking)
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
+
+## Setup
+
+1. Clone the repository and change to the directory
+2. run `npm install`
+3. Open node_modules/react-native-scripts/build/bin/crna-entry.js and change `var _App = require('../../../../App');` to `var _App = require('../../../../src/App');`
+4. run `npm start` to run the app. Follow the directions to run on your phone
 
 ## Updating to New Releases
 
@@ -134,9 +142,8 @@ To add a local dependency to the correct Flow version to a Create React Native A
 
 1. Find the Flow `[version]` at the bottom of the included [.flowconfig](.flowconfig)
 2. Run `npm install --save-dev flow-bin@x.y.z` (or `yarn add --dev flow-bin@x.y.z`), where `x.y.z` is the .flowconfig version number.
-3. Open node_modules/react-native-scripts/build/bin/crna-entry.js and change `var _App = require('../../../../App');` to `var _App = require('../../../../src/App');`
-4. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
-5. Add `// @flow` to any files you want to type check (for example, to `App.js`).
+3. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
+4. Add `// @flow` to any files you want to type check (for example, to `App.js`).
 
 Now you can run `npm run flow` (or `yarn flow`) to check the files for type errors.
 You can optionally use a [plugin for your IDE or editor](https://flow.org/en/docs/editors/) for a better integrated experience.
