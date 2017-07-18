@@ -31,6 +31,7 @@ export default class EventsPage extends React.Component {
   static navigationOptions = {
     title: 'Events',
   };
+
   render() {
     return (
       <View>

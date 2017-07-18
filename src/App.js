@@ -7,7 +7,7 @@ import { findEvents } from './utils/TicketMasterService';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Home',
+    //title: '',
   };
   render() {
     const { navigate } = this.props.navigation;
@@ -23,7 +23,7 @@ class HomeScreen extends React.Component {
           onPress={() => navigate('Nav')}
           title="Go"
         />
-      </View>
+    </View>
     );
   }
 }
