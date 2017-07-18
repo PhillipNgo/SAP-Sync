@@ -15,7 +15,7 @@ class EventBlock extends React.Component {
   render() {
     const { event } = this.props;
     return (
-      <View style={{marginTop: 22}}>
+      <View>
         <Modal
             animationType={"slide"}
             transparent={false}
