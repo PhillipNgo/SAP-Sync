@@ -3,15 +3,18 @@ import background1 from './../imgs/background1.jpg';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'blue',
-    fontSize:40
+    backgroundColor: 'rgba(159, 159, 159, 0.22)',
+    width:100,
+    borderRadius:20,
+    marginTop:5
   },
   'centerBlock': {
     marginLeft: 'auto',
     marginRight: 'auto'
   },
   'headingOne': {
-    fontSize: 40
+    fontSize: 40,
+    fontWeight:'600'
   },
   'statusBar': {
     backgroundColor: '#2379BF',
@@ -55,10 +58,23 @@ const styles = StyleSheet.create({
     textShadowColor: 'black',
     textShadowOffset: {width:1, height:1},
     textShadowRadius: 3,
-    backgroundColor: 'rgba(0, 0, 0, 0.15)',
+    backgroundColor: 'rgba(0, 0, 0, 0.15)'
   },
   container: {
     paddingTop:18
+  },
+  profileBox: {
+    flex:1 ,
+    flexDirection: 'row',
+    alignItems:'baseline',
+    justifyContent: 'flex-start'
+  },
+  profileHeading: {
+    fontSize: 28,
+    fontWeight:'400'
+  },
+  profileInfo: {
+    fontSize: 20
   }
 });
 
