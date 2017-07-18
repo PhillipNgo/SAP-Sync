@@ -1,6 +1,8 @@
 import React from 'react';
-import { Text, Button, Platform, ScrollView, StyleSheet } from 'react-native';
+import { Text, Button, Platform, ScrollView, StyleSheet, Image } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
+
+const url = 'https://scontent.xx.fbcdn.net/v/t1.0-1/p320x320/11037222_10205920297827781_3146923335721648288_n.jpg?oh=bc6fa550affbafb0b565aa523b8f6ec9&oe=5A00A82B';
 
 const ProfileScreen = ({ navigation }) => (
   <ScrollView style={styles.container}>
@@ -8,8 +10,13 @@ const ProfileScreen = ({ navigation }) => (
   </ScrollView>
 );
 ProfileScreen.navigationOptions = {
-  drawerLabel: 'View My Profile',
-   drawerIcon:
+  drawerLabel: 'Ronald Cheng',
+  drawerIcon: (()=> (
+     <Image
+       source={{ url}}
+       style={{ width: 32, height: 32 }}
+     />
+   ))
 };
 
 const PlacesScreen = ({ navigation }) => (
@@ -53,7 +60,8 @@ const Nav = DrawerNavigator(
     contentOptions: {
       activeTintColor: '#e91e63',
     },
-  }
+    drawerPosition: 'right'
+  },
 );
 
 const styles = StyleSheet.create({
