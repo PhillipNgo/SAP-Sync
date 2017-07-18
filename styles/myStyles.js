@@ -37,6 +37,8 @@ const styles = StyleSheet.create({
   },
   backdrop: {
     paddingTop: 10,
+    height: 266,
+    width: 400
   },
   backdropView: {
     backgroundColor: 'rgba(0,0,0,0)',

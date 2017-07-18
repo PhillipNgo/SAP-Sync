@@ -3,7 +3,7 @@ import { ScrollView, TouchableOpacity, Image, AppRegistry, Alert, Text, View, Bu
 import { StackNavigator } from 'react-navigation';
 import styles from '../styles/myStyles';
 import  Nav  from './Nav';
-import { findEvents } from './utils/TicketMasterService';
+import LocalEventsPage from './LocalEventsPage';
 
 class EventsPage extends React.Component {
   constructor(props) {
@@ -13,15 +13,6 @@ class EventsPage extends React.Component {
       data: {}
     };
     this._onPressButton = this._onPressButton.bind(this);
-  }
-
-  componentDidMount() {
-    findEvents('22180').then(data => {
-      this.setState({
-        data: data
-      })
-    });
-
   }
 
   _onPressButton() {
@@ -93,7 +84,6 @@ class EventsPage extends React.Component {
   }
 }
 
-
 class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Home',
@@ -110,7 +100,11 @@ class HomeScreen extends React.Component {
         />
         <Button
           onPress={() => navigate('Event')}
-          title="Go"
+          title="Find In-House Events"
+        />
+        <Button
+          onPress={() => navigate('LocalEvents')}
+          title="Find Local Events"
         />
       </View>
     );
@@ -120,6 +114,7 @@ class HomeScreen extends React.Component {
 const App = StackNavigator({
   Home: { screen: HomeScreen },
   Event: { screen: EventsPage },
+  LocalEvents: { screen: LocalEventsPage }
 });
 
 AppRegistry.registerComponent('App', () => App);
