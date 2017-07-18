@@ -20,7 +20,7 @@ class HomePage extends React.Component {
           style={[styles.centerBlock, styles.backdrop]}
         >
           <View style={styles.backdropHome}>
-            <Text style={[styles.headingOne, {textAlign: 'center', paddingTop: '13%'}]}>Hello, Ronald!</Text>
+            <Text style={[styles.headingOne, {textAlign: 'center', paddingTop: '13%'}]}>SAP SYNC</Text>
             <Image
               source={require('./../imgs/ronald.jpg')}
               style={[styles.centerBlock, {borderRadius: 20}]}
@@ -28,13 +28,13 @@ class HomePage extends React.Component {
             <View style={[styles.button,styles.centerBlock]}>
               <Button
                 onPress={() => navigate('Local')}
-                title="Local"
+                title="In-House Events"
               />
             </View>
             <View style={[styles.button,styles.centerBlock]}>
               <Button
                 onPress={() => navigate('InHouse')}
-                title="In-House"
+                title="Local Events"
               />
             </View>
           </View>
