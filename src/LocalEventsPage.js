@@ -29,7 +29,7 @@ class LocalEventsPage extends React.Component {
   render() {
     const { data, hasFetched } = this.state;
     return (
-      <View>
+      <View style={{marginTop: 22}}>
         <ScrollView>
         { hasFetched &&
           data.map((event, index) => {
