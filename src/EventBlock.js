@@ -15,40 +15,66 @@ class EventBlock extends React.Component {
   render() {
     const { event } = this.props;
     return (
-      <View>
+      <View style={{marginTop: 22}}>
         <Modal
             animationType={"slide"}
             transparent={false}
             visible={this.state.modalVisible}
             onRequestClose={() => {alert("Modal has been closed.")}}
             >
-           <View style={{marginTop: 22}}>
-            <View>
+           <ScrollView style={{marginTop: 22}}>
+            <View style={{flex: 1, flexDirection: 'column', paddingTop: '5%'}}>
               <Image
                 style={[styles.centerBlock, styles.backdrop, {height: 266, width: 400}]}
                 source={{uri: event.images[0].url}}
               />
               <Text style={[styles.headline]}>{event.name}</Text>
-              <Text>Date: {dateFormat(event.dates.start.dateTime, 'mm/dd/yyyy')}</Text>
-              <Text>Time: {dateFormat(event.dates.start.dateTime, 'h:MM TT')}</Text>
-              <Text>Location: {event._embedded.venues[0].name + ' (' + event._embedded.venues[0].city.name + ', ' + event._embedded.venues[0].state.name + ')'}</Text>
-              <Text>Website: <Text style={{color: 'blue'}} onPress={() => Linking.openURL(event.url)}>{event.url}</Text></Text>
-              <Text>Co-Workers Attending: 1</Text>
-              <Image
-                source={require('./../imgs/rex.jpg')}
-                resizeMode='cover'
-                style={[styles.centerBlock, {borderRadius: 20, height: 50, width: 50}]}
-              />
-              <Text>Rex Ledesma</Text>
-              <Button onPress={() => {}} title='Invite'/>
-              <Button
-                onPress={() => {
-                  this.setModalVisible(!this.state.modalVisible)
-                }}
-                title='Close'
-              />
+              <View style={styles.profileBox}>
+                <Text style={styles.modalHeading}> Date: </Text>
+                <Text style={styles.modalInfo}> {dateFormat(event.dates.start.dateTime, 'mm/dd/yyyy')} </Text>
+              </View>
+
+              <View style={styles.profileBox}>
+                <Text style={styles.modalHeading}> Time: </Text>
+                <Text style={styles.modalInfo}> {dateFormat(event.dates.start.dateTime, 'h:MM TT')} </Text>
+              </View>
+
+              <View style={styles.profileBox}>
+                <Text style={styles.modalHeading}> Location: </Text>
+                <Text style={styles.modalInfo}> {event._embedded.venues[0].name + ' (' + event._embedded.venues[0].city.name + ', ' + event._embedded.venues[0].state.name + ')'} </Text>
+              </View>
+
+              <View style={styles.profileBox}>
+                <Text style={styles.modalHeading}> Website: </Text>
+                <Text style={{color: 'blue'}} onPress={() => Linking.openURL(event.url)}>{event.url}</Text>
+              </View>
+
+              <Text style={styles.modalHeading}>Co-Workers Attending:<Text style={styles.modalInfo}>1</Text></Text>
+
+              <View style={{flex:1,flexDirection:'row',alignItems:'baseline'}}>
+                <Image
+                  source={require('./../imgs/rex.jpg')}
+                  resizeMode='cover'
+                  style={[styles.centerBlock, {borderRadius: 20, height: 50, width: 50}]}
+                />
+              </View>
+
+
+              <View style={[styles.button,styles.centerBlock]}>
+                <Button onPress={() => {}} title='Invite'/>
+              </View>
+
+              <View style={[styles.button,styles.centerBlock]}>
+                <Button
+                  onPress={() => {
+                    this.setModalVisible(!this.state.modalVisible)
+                  }}
+                  title='Close'
+                />
+              </View>
+
             </View>
-           </View>
+           </ScrollView>
         </Modal>
         <TouchableOpacity onPress={() => this.setModalVisible(true)} underlayColor='white' >
           <Image
