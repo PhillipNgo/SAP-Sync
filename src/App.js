@@ -1,11 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, AppRegistry, TextInput  } from 'react-native';
+import { StyleSheet, Text, View, AppRegistry, TextInput } from 'react-native';
 import styles from '../styles/myStyles';
+import { findEvents } from './utils/TicketMasterService';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: 'Useless Placeholder' };
+    this.state = {
+      text: 'Useless Placeholder',
+      data: {}
+    };
+  }
+
+  componentDidMount() {
+    findEvents('22180').then(data => {
+      this.setState({
+        data: data
+      })
+    });
   }
 
   render() {
