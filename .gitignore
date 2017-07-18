@@ -3,3 +3,4 @@ node_modules/
 npm-debug.*
 react-native-packager-cache*
 haste-map-react-native-packager*
+src/utils/key.js
