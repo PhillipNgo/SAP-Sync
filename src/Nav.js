@@ -3,6 +3,7 @@ import { Text, Button, Platform, ScrollView, StyleSheet, Image } from 'react-nat
 import { DrawerNavigator } from 'react-navigation';
 import EventsPage from './EventsPage';
 import ProfilePage from './ProfilePage';
+import HomePage from './HomePage';
 
 const Nav = DrawerNavigator(
   {
@@ -10,10 +11,18 @@ const Nav = DrawerNavigator(
       path: '/',
       screen: ProfilePage,
     },
-    Events: {
-      path: '/events',
+    Local: {
+      path: '/events1',
       screen: EventsPage,
     },
+    InHouse: {
+      path: '/events2',
+      screen: EventsPage,
+    },
+    Home: {
+      path: '/Home',
+      screen: HomePage,
+    }
     // Friends: {
     //   path: '/friends',
     //   screen: FriendsScreen,
@@ -32,9 +41,9 @@ const Nav = DrawerNavigator(
     // },
   },
   {
-    initialRouteName: 'Profile',
+    initialRouteName: 'Home',
     contentOptions: {
-      activeTintColor: '#2379BF',
+      activeTintColor: '#e91e63',
     },
     drawerPosition: 'right'
   },
@@ -42,6 +51,7 @@ const Nav = DrawerNavigator(
 
 const styles = StyleSheet.create({
   container: {
+    //marginTop: Platform.OS === 'ios' ? 20 : 0,
     height: '100%'
   },
 });
