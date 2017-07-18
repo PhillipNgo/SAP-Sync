@@ -4,8 +4,11 @@ import styles from '../styles/myStyles';
 import dateFormat from 'dateformat';
 
 class EventBlock extends React.Component {
-  state = {
-    modalVisible: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalVisible: false
+    }
   }
 
   setModalVisible(visible) {
@@ -17,7 +20,7 @@ class EventBlock extends React.Component {
     return (
       <View>
         <Modal
-            animationType={"slide"}
+            animationType={'slide'}
             transparent={false}
             visible={this.state.modalVisible}
             >
@@ -32,24 +35,19 @@ class EventBlock extends React.Component {
                 <Text style={styles.modalHeading}> Date: </Text>
                 <Text style={styles.modalInfo}> {dateFormat(event.dates.start.dateTime, 'mm/dd/yyyy')} </Text>
               </View>
-
               <View style={styles.profileBox}>
                 <Text style={styles.modalHeading}> Time: </Text>
                 <Text style={styles.modalInfo}> {dateFormat(event.dates.start.dateTime, 'h:MM TT')} </Text>
               </View>
-
               <View style={styles.profileBox}>
                 <Text style={styles.modalHeading}> Location: </Text>
                 <Text style={styles.modalInfo}> {event._embedded.venues[0].name + ' (' + event._embedded.venues[0].city.name + ', ' + event._embedded.venues[0].state.name + ')'} </Text>
               </View>
-
               <View style={styles.profileBox}>
                 <Text style={styles.modalHeading}> Website: </Text>
                 <Text style={{color: 'blue'}} onPress={() => Linking.openURL(event.url)}>{event.url}</Text>
               </View>
-
               <Text style={styles.modalHeading}>Co-Workers Attending:<Text style={styles.modalInfo}>1</Text></Text>
-
               <View style={{flex:1,flexDirection:'row',alignItems:'baseline'}}>
                 <Image
                   source={require('./../imgs/rex.jpg')}
@@ -57,12 +55,9 @@ class EventBlock extends React.Component {
                   style={[styles.centerBlock, {borderRadius: 20, height: 50, width: 50}]}
                 />
               </View>
-
-
               <View style={[styles.button,styles.centerBlock]}>
                 <Button onPress={() => {}} title='Invite'/>
               </View>
-
               <View style={[styles.button,styles.centerBlock]}>
                 <Button
                   onPress={() => {
@@ -71,7 +66,6 @@ class EventBlock extends React.Component {
                   title='Close'
                 />
               </View>
-
             </View>
            </ScrollView>
         </Modal>

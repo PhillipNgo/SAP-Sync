@@ -1,9 +1,7 @@
 import React from 'react';
-import { ScrollView, TouchableOpacity, Image, AppRegistry, Alert, Text, View, Button, TextInput, NavigatorIOS } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { AppRegistry } from 'react-native';
 import styles from '../styles/myStyles';
-import  Nav  from './Nav';
-import LocalEventsPage from './LocalEventsPage';
+import Nav from './Nav';
 
 const App = ()=> {
   return <Nav/>

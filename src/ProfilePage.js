@@ -1,12 +1,8 @@
 import React from 'react';
-import { Text, Button, Platform, ScrollView, StyleSheet, Image, View } from 'react-native';
-import { DrawerNavigator } from 'react-navigation';
-import EventsPage from './EventsPage';
+import { Text, ScrollView, Image, View } from 'react-native';
 import styles from '../styles/myStyles';
 
-
 export default class ProfilePage extends React.Component {
-
   static navigationOptions = {
     drawerLabel: 'Ronald Cheng',
     drawerIcon: (()=> (

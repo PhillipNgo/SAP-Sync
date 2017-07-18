@@ -1,6 +1,5 @@
 import React from 'react';
-import { ScrollView, TouchableOpacity, Image, AppRegistry, Alert, Text, View, Button, TextInput, NavigatorIOS } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { ScrollView, View } from 'react-native';
 import { findEvents } from './utils/TicketMasterService';
 import styles from '../styles/myStyles';
 import EventBlock from './EventBlock';

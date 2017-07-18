@@ -1,11 +1,9 @@
 import React from 'react';
-import { ScrollView, TouchableOpacity, Image, AppRegistry, Alert, Text, View, Button, TextInput, NavigatorIOS } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { ScrollView, View } from 'react-native';
 import styles from '../styles/myStyles';
-import  Nav  from './Nav';
-import { findEvents } from './utils/TicketMasterService';
 import EventBlock from './EventBlock';
 
+//Custom Data for Company Events
 const EventData = [
   {
     name: 'Morning Coffee',
@@ -118,15 +116,10 @@ const EventData = [
   }
 ];
 
-
 export default class EventsPage extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  static navigationOptions = {
-    title: 'Events'
-  };
 
   render() {
     return (

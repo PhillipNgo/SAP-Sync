@@ -4,9 +4,9 @@ import background1 from './../imgs/background1.jpg';
 const styles = StyleSheet.create({
   button: {
     backgroundColor: 'rgba(159, 159, 159, 0.22)',
-    width:200,
-    borderRadius:20,
-    marginTop:5
+    width: 200,
+    borderRadius: 20,
+    marginTop: 5
   },
   'centerBlock': {
     marginLeft: 'auto',
@@ -18,20 +18,20 @@ const styles = StyleSheet.create({
   },
   'statusBar': {
     backgroundColor: '#2379BF',
-    width:'100%',
-    height:'7%'
+    width: '100%',
+    height: '7%'
   },
   'tabBar': {
     backgroundColor: '#2379BF',
-    width:'100%',
-    height:'28%'
+    width: '100%',
+    height: '28%'
   },
   'loginBlock': {
     marginTop: 'auto'
   },
   'loginInput': {
-    textAlign:'center',
-    borderWidth:1,
+    textAlign: 'center',
+    borderWidth: 1,
     borderColor: 'gray',
     height: 40,
     width: '50%',
@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
   },
   backdropView: {
     backgroundColor: 'rgba(0, 0, 0, 0.22)',
-    height:266,
-    width:400
+    height: 266,
+    width: 400
   },
   backdropHome: {
     backgroundColor: 'rgba(235, 235, 235, 0.53)',
-    height:'100%',
-    width:400
+    height: '100%',
+    width: 400
   },
   headline: {
     fontSize: 50,
@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
     textShadowRadius: 3,
   },
   container: {
-    paddingTop:18
+    paddingTop: 18
   },
   profileBox: {
-    flex:1 ,
+    flex: 1 ,
     flexDirection: 'row',
-    alignItems:'baseline',
+    alignItems: 'baseline',
     justifyContent: 'flex-start'
   },
   profileHeading: {
