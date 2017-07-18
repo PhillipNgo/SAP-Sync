@@ -30,6 +30,7 @@ class NewEvent extends React.Component {
                borderBottomWidth: 1,
                backgroundColor: 'lightblue'
              }}>
+             <Text> Create a New Event </Text>
             <FormLabel>Title</FormLabel>
             <FormInput />
             <FormLabel>Date</FormLabel>

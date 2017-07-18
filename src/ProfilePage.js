@@ -20,7 +20,7 @@ export default class ProfilePage extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView style={{height:'100%'}}>
           <Text style={[{textAlign: 'center'}, styles.headingOne]}>Ronald Cheng</Text>
           <Image
             source={require('./../imgs/ronald.jpg')}

@@ -4,7 +4,7 @@ import background1 from './../imgs/background1.jpg';
 const styles = StyleSheet.create({
   button: {
     backgroundColor: 'rgba(159, 159, 159, 0.22)',
-    width:100,
+    width:200,
     borderRadius:20,
     marginTop:5
   },
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     marginTop: .1,
   },
   backdropView: {
-    backgroundColor: 'rgba(0, 0, 0, 0.15)',
+    backgroundColor: 'rgba(0, 0, 0, 0.22)',
     height:266,
     width:400
   },
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     textShadowColor: 'black',
     textShadowOffset: {width:1, height:1},
     textShadowRadius: 3,
-    backgroundColor: 'rgba(0, 0, 0, 0.15)'
   },
   container: {
     paddingTop:18
@@ -75,6 +74,13 @@ const styles = StyleSheet.create({
   },
   profileInfo: {
     fontSize: 20
+  },
+  modalHeading: {
+    fontSize: 20,
+    fontWeight:'400'
+  },
+  modalInfo: {
+    fontSize: 15
   }
 });
 
