@@ -4,6 +4,7 @@ import { DrawerNavigator } from 'react-navigation';
 import EventsPage from './EventsPage';
 import ProfilePage from './ProfilePage';
 import HomePage from './HomePage';
+import NewEvent from './NewEvent';
 
 const Nav = DrawerNavigator(
   {
@@ -22,6 +23,10 @@ const Nav = DrawerNavigator(
     Home: {
       path: '/Home',
       screen: HomePage,
+    },
+    NewEvent: {
+      path: '/New',
+      screen: NewEvent,
     }
     // Friends: {
     //   path: '/friends',
