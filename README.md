@@ -35,7 +35,7 @@ Below you'll find information about performing common tasks. The most recent ver
 3. Open node_modules/react-native-scripts/build/bin/crna-entry.js and change `var _App = require('../../../../App');` to `var _App = require('../../../../src/App');`
 4. run `npm start` to run the app. Follow the directions to run on your phone
 5. Obtain a TicketMaster API Key from the [TicketMaster developer website](http://developer.ticketmaster.com/)
-6. Create a file `key.js` in the `utils` folder and paste your API key there, `export default API_KEY = 'your key';
+6. Create a file `key.js` in the `utils` folder and paste your API key there, `export default API_KEY = 'your key';`  
 
 ## Updating to New Releases
 
