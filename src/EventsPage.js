@@ -121,6 +121,10 @@ export default class EventsPage extends React.Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'Company Events'
+  };
+
   render() {
     return (
       <View style={styles.container}>

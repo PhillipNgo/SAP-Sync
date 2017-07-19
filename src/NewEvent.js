@@ -45,10 +45,10 @@ class NewEvent extends React.Component {
           <FormLabel>Date</FormLabel>
           <DatePicker
             date = {this.state.date}
-            format='MM-DD-YYYY'
-            confirmBtnText= 'Confirm'
-            cancelBtnText= 'Cancel'
-            style={{width: 300}}
+            format="MM-DD-YYYY"
+            confirmBtnText= "Confirm"
+            cancelBtnText= "Cancel"
+            style={[styles.centerBlock,{width: 260}]}
             onDateChange={(date) => {this.setState({date: date})}}
            />
           <FormLabel>Description</FormLabel>
@@ -56,17 +56,9 @@ class NewEvent extends React.Component {
           <FormLabel>Location</FormLabel>
           <FormInput />
           <Button
-            onPress={getLocation}
-            title='Current Location'
+            onPress={() => navigate('Local')}
+            title='Create'
           />
-          <FormLabel>Groups</FormLabel>
-          <FormInput />
-          <View style={[styles.centerBlock, styles.button]}>
-            <Button
-              onPress={() => navigate('Local')}
-              title='Create'
-            />
-          </View>
         </View>
       </ScrollView>
     );

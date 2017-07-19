@@ -22,7 +22,7 @@ class HomePage extends React.Component {
             <View style={[styles.button,styles.centerBlock]}>
               <Button
                 onPress={() => navigate('Local')}
-                title='In-House Events'
+                title='Company Events'
               />
             </View>
             <View style={[styles.button,styles.centerBlock]}>

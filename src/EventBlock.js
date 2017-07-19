@@ -45,7 +45,7 @@ class EventBlock extends React.Component {
               </View>
               <View style={styles.profileBox}>
                 <Text style={styles.modalHeading}> Website: </Text>
-                <Text style={{color: 'blue'}} onPress={() => Linking.openURL(event.url)}>{event.url}</Text>
+                <Text style={{color: '#2e98ee'}} onPress={() => Linking.openURL(event.url)}>{event.url}</Text>
               </View>
               <Text style={styles.modalHeading}>Co-Workers Attending:<Text style={styles.modalInfo}>1</Text></Text>
               <View style={{flex:1,flexDirection:'row',alignItems:'baseline'}}>

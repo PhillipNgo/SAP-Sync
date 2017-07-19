@@ -14,15 +14,19 @@ const styles = StyleSheet.create({
   },
   'headingOne': {
     fontSize: 40,
-    fontWeight:'600'
+    fontWeight:'600',
+    color:'#2e98ee',
+    textShadowColor: 'black',
+    textShadowOffset: {width:1, height:1},
+    textShadowRadius: 3,
   },
   'statusBar': {
-    backgroundColor: '#2379BF',
+    backgroundColor: '#2e98ee',
     width: '100%',
     height: '7%'
   },
   'tabBar': {
-    backgroundColor: '#2379BF',
+    backgroundColor: '#2e98ee',
     width: '100%',
     height: '28%'
   },
